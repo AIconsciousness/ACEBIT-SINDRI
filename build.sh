@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "Installing dependencies..."
-npm ci --only=production
+echo "Installing dependencies with legacy peer deps..."
+npm ci --legacy-peer-deps
 
 echo "Building the application..."
 npm run build
