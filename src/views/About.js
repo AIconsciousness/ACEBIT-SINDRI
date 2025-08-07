@@ -53,9 +53,9 @@ const About = () => {
   }, [currentText, isTyping, currentWord, animatedWords]);
 
   const stats = [
-    { icon: Users, value: "400+", label: "Active Members", color: "text-blue-500", bg: "bg-blue-500/10" },
+    { icon: Users, value: "400+", label: "General Members", color: "text-blue-500", bg: "bg-blue-500/10" },
     { icon: Award, value: "60+", label: "Core Members", color: "text-green-500", bg: "bg-green-500/10" },
-    { icon: Calendar, value: "50+", label: "Events Organized", color: "text-purple-500", bg: "bg-purple-500/10" },
+    { icon: Calendar, value: "100+", label: "Events Organized", color: "text-purple-500", bg: "bg-purple-500/10" },
     { icon: TrendingUp, value: "5+", label: "Years of Excellence", color: "text-orange-500", bg: "bg-orange-500/10" }
   ];
 

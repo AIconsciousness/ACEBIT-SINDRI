@@ -54,40 +54,40 @@ import sahil from "../assets/images/2k22/sahil.jpeg";
 const Core2k22 = () => {
   const teamData = [
     {
-      name: "Abhay Kumar",
-      position: "President",
+      name: "Abhay Kr. Mahato",
+      position: "Development Team",
       image: abhay,
-      linkedin: "https://linkedin.com/in/abhay-kumar",
+      linkedin: "https://www.linkedin.com/in/abhay-kr-mahato-a7aa3a236/",
       email: "abhay.kumar@bitsindri.ac.in",
       phone: "+91-94311-12400"
     },
     {
-      name: "Abhishek Singh",
-      position: "Vice President",
+      name: "Abhishek Thakur",
+      position: "Social Media Team",
       image: abhishek,
       linkedin: "https://linkedin.com/in/abhishek-singh",
       email: "abhishek.singh@bitsindri.ac.in",
       phone: "+91-94311-12401"
     },
     {
-      name: "Abhinav Kumar",
-      position: "General Secretary",
+      name: "Abhinav Gourav",
+      position: "Editorial Team",
       image: abhinav,
       linkedin: "https://linkedin.com/in/abhinav-kumar",
       email: "abhinav.kumar@bitsindri.ac.in",
       phone: "+91-94311-12402"
     },
     {
-      name: "Aryan Sharma",
-      position: "Joint Secretary",
+      name: "Aryan Kumar",
+      position: "Ideation Team",
       image: aryan,
       linkedin: "https://linkedin.com/in/aryan-sharma",
       email: "aryan.sharma@bitsindri.ac.in",
       phone: "+91-94311-12403"
     },
     {
-      name: "Chandan Kumar",
-      position: "Treasurer",
+      name: "Jaydeep Kumar",
+      position: "Ideation Team",
       image: chandan,
       linkedin: "https://linkedin.com/in/chandan-kumar",
       email: "chandan.kumar@bitsindri.ac.in",
@@ -103,7 +103,7 @@ const Core2k22 = () => {
     },
     {
       name: "Deepak Patel",
-      position: "Event Coordinator",
+      position: "Operational Team",
       image: deepakp,
       linkedin: "https://linkedin.com/in/deepak-patel",
       email: "deepak.patel@bitsindri.ac.in",
@@ -111,7 +111,7 @@ const Core2k22 = () => {
     },
     {
       name: "Divyanshu Singh",
-      position: "Public Relations",
+      position: "Operational Team",
       image: divyanshus,
       linkedin: "https://linkedin.com/in/divyanshu-singh",
       email: "divyanshu.singh@bitsindri.ac.in",
@@ -119,7 +119,7 @@ const Core2k22 = () => {
     },
     {
       name: "Hritik Kumar",
-      position: "Cultural Secretary",
+      position: "Designing Team, Sports And Cultural Team",
       image: hritik,
       linkedin: "https://linkedin.com/in/hritik-kumar",
       email: "hritik.kumar@bitsindri.ac.in",
@@ -127,7 +127,7 @@ const Core2k22 = () => {
     },
     {
       name: "Kuwar Singh",
-      position: "Academic Coordinator",
+      position: "Research & Project Application Team",
       image: kuwar,
       linkedin: "https://linkedin.com/in/kuwar-singh",
       email: "kuwar.singh@bitsindri.ac.in",
@@ -135,7 +135,7 @@ const Core2k22 = () => {
     },
     {
       name: "Muskan Kumari",
-      position: "Social Media Manager",
+      position: "Counselling Team , Research & Project Application Team",
       image: muskan,
       linkedin: "https://linkedin.com/in/muskan-kumari",
       email: "muskan.kumari@bitsindri.ac.in",
@@ -143,7 +143,7 @@ const Core2k22 = () => {
     },
     {
       name: "Nitish Kumar",
-      position: "Content Writer",
+      position: "Editorial Team",
       image: nitish,
       linkedin: "https://linkedin.com/in/nitish-kumar",
       email: "nitish.kumar@bitsindri.ac.in",
@@ -151,7 +151,7 @@ const Core2k22 = () => {
     },
     {
       name: "Pradeep Kumar",
-      position: "Research Coordinator",
+      position: "Designing Team",
       image: pradeep,
       linkedin: "https://linkedin.com/in/pradeep-kumar",
       email: "pradeep.kumar@bitsindri.ac.in",
@@ -159,7 +159,7 @@ const Core2k22 = () => {
     },
     {
       name: "Priyanshu Kumar",
-      position: "Innovation Head",
+      position: "Sports And Cultural Team",
       image: priyanshu,
       linkedin: "https://linkedin.com/in/priyanshu-kumar",
       email: "priyanshu.kumar@bitsindri.ac.in",
@@ -167,7 +167,7 @@ const Core2k22 = () => {
     },
     {
       name: "Rahul Kalindi",
-      position: "Project Coordinator",
+      position: "Development Team",
       image: rahulkali,
       linkedin: "https://linkedin.com/in/rahul-kalindi",
       email: "rahul.kalindi@bitsindri.ac.in",
@@ -175,7 +175,7 @@ const Core2k22 = () => {
     },
     {
       name: "Riya Gupta",
-      position: "Women Cell Head",
+      position: "Designing Team & Social Media Team",
       image: riyagupta,
       linkedin: "https://linkedin.com/in/riya-gupta",
       email: "riya.gupta@bitsindri.ac.in",
@@ -183,7 +183,7 @@ const Core2k22 = () => {
     },
     {
       name: "Shipra Kumari",
-      position: "Digital Marketing",
+      position: "Operational Team & Public Relations Team",
       image: shipra,
       linkedin: "https://linkedin.com/in/shipra-kumari",
       email: "shipra.kumari@bitsindri.ac.in",
@@ -191,7 +191,7 @@ const Core2k22 = () => {
     },
     {
       name: "Sumit Kumar",
-      position: "Quality Assurance",
+      position: "Marketing Team",
       image: sumit,
       linkedin: "https://linkedin.com/in/sumit-kumar",
       email: "sumit.kumar@bitsindri.ac.in",
@@ -199,7 +199,7 @@ const Core2k22 = () => {
     },
     {
       name: "Anjali Kumari",
-      position: "Alumni Coordinator",
+      position: "Editorial Team",
       image: anjali,
       linkedin: "https://linkedin.com/in/anjali-kumari",
       email: "anjali.kumari@bitsindri.ac.in",
@@ -207,7 +207,7 @@ const Core2k22 = () => {
     },
     {
       name: "Divyanshu Kumar",
-      position: "Industry Connect",
+      position: "Counselling Team , Sponsorship Team",
       image: divyanshu,
       linkedin: "https://linkedin.com/in/divyanshu-kumar",
       email: "divyanshu.kumar@bitsindri.ac.in",
@@ -215,7 +215,7 @@ const Core2k22 = () => {
     },
     {
       name: "Harshita Kumari",
-      position: "Student Welfare",
+      position: "Operational Team ,",
       image: harshita,
       linkedin: "https://linkedin.com/in/harshita-kumari",
       email: "harshita.kumari@bitsindri.ac.in",
@@ -223,7 +223,7 @@ const Core2k22 = () => {
     },
     {
       name: "Jaiprakash Kumar",
-      position: "Infrastructure Head",
+      position: "Designing Team",
       image: jaipraksh,
       linkedin: "https://linkedin.com/in/jaiprakash-kumar",
       email: "jaiprakash.kumar@bitsindri.ac.in",
@@ -231,7 +231,7 @@ const Core2k22 = () => {
     },
     {
       name: "Jaydeep Kumar",
-      position: "Sports Coordinator",
+      position: "Ideation Team",
       image: jaydeep,
       linkedin: "https://linkedin.com/in/jaydeep-kumar",
       email: "jaydeep.kumar@bitsindri.ac.in",
@@ -239,7 +239,7 @@ const Core2k22 = () => {
     },
     {
       name: "Manish Kumar",
-      position: "Discipline Secretary",
+      position: "Designing Team",
       image: manish,
       linkedin: "https://linkedin.com/in/manish-kumar",
       email: "manish.kumar@bitsindri.ac.in",
@@ -247,7 +247,7 @@ const Core2k22 = () => {
     },
     {
       name: "Prince Kumar",
-      position: "Technical Coordinator",
+      position: "Research & Project Application Team",
       image: prince,
       linkedin: "https://linkedin.com/in/prince-kumar",
       email: "prince.kumar@bitsindri.ac.in",
@@ -255,7 +255,7 @@ const Core2k22 = () => {
     },
     {
       name: "Rahul Kumar",
-      position: "Workshop Coordinator",
+      position: "Editorial Team",
       image: rahul,
       linkedin: "https://linkedin.com/in/rahul-kumar",
       email: "rahul.kumar@bitsindri.ac.in",
@@ -263,7 +263,7 @@ const Core2k22 = () => {
     },
     {
       name: "Ravi Ranjan",
-      position: "Seminar Coordinator",
+      position: "Editorial Team",
       image: raviranjan,
       linkedin: "https://linkedin.com/in/ravi-ranjan",
       email: "ravi.ranjan@bitsindri.ac.in",
@@ -271,7 +271,7 @@ const Core2k22 = () => {
     },
     {
       name: "Shraban Kumar",
-      position: "Competition Head",
+      position: "Editorial Team",
       image: shraban,
       linkedin: "https://linkedin.com/in/shraban-kumar",
       email: "shraban.kumar@bitsindri.ac.in",
@@ -279,7 +279,7 @@ const Core2k22 = () => {
     },
     {
       name: "Shubham Patel",
-      position: "Exhibition Coordinator",
+      position: "Industrial Relation Team",
       image: shubham,
       linkedin: "https://linkedin.com/in/shubham-patel",
       email: "shubham.patel@bitsindri.ac.in",
@@ -287,7 +287,7 @@ const Core2k22 = () => {
     },
     {
       name: "Sneha Kumari",
-      position: "Community Service",
+      position: "Marketing Team",
       image: sneha,
       linkedin: "https://linkedin.com/in/sneha-kumari",
       email: "sneha.kumari@bitsindri.ac.in",
@@ -295,7 +295,7 @@ const Core2k22 = () => {
     },
     {
       name: "Upen Kumar",
-      position: "Outreach Coordinator",
+      position: "GATE-ESE Forum",
       image: upen,
       linkedin: "https://linkedin.com/in/upen-kumar",
       email: "upen.kumar@bitsindri.ac.in",
@@ -303,7 +303,7 @@ const Core2k22 = () => {
     },
     {
       name: "Rimil Hansda",
-      position: "Cultural Events",
+      position: "Sponsorship Team",
       image: rimil,
       linkedin: "https://linkedin.com/in/rimil-hansda",
       email: "rimil.hansda@bitsindri.ac.in",
@@ -311,7 +311,7 @@ const Core2k22 = () => {
     },
     {
       name: "Shubham Singh",
-      position: "Technical Events",
+      position: "Industrial Relation Team",
       image: shubhams,
       linkedin: "https://linkedin.com/in/shubham-singh",
       email: "shubham.singh@bitsindri.ac.in",
@@ -319,7 +319,7 @@ const Core2k22 = () => {
     },
     {
       name: "Priya Swami",
-      position: "Academic Events",
+      position: "Public Relations Team",
       image: swami,
       linkedin: "https://linkedin.com/in/priya-swami",
       email: "priya.swami@bitsindri.ac.in",
@@ -327,7 +327,7 @@ const Core2k22 = () => {
     },
     {
       name: "Sushant Kumar",
-      position: "Innovation Events",
+      position: "GATE-ESE Forum,Marketing Team",
       image: sushant,
       linkedin: "https://linkedin.com/in/sushant-kumar",
       email: "sushant.kumar@bitsindri.ac.in",
@@ -335,7 +335,7 @@ const Core2k22 = () => {
     },
     {
       name: "Sohel Khan",
-      position: "Industry Events",
+      position: "Sports And Cultural Team",
       image: sohel,
       linkedin: "https://linkedin.com/in/sohel-khan",
       email: "sohel.khan@bitsindri.ac.in",
@@ -343,7 +343,7 @@ const Core2k22 = () => {
     },
     {
       name: "Sahil Kumar",
-      position: "Alumni Events",
+      position: "Sponsorship Team",
       image: sahil,
       linkedin: "https://linkedin.com/in/sahil-kumar",
       email: "sahil.kumar@bitsindri.ac.in",

@@ -31,7 +31,7 @@ const Footer = () => {
     { name: "Events", href: "/events", icon: "📅" },
     { name: "Gallery", href: "/gallery", icon: "🖼️" },
     { name: "Team", href: "/core", icon: "👥" },
-    { name: "Contact", href: "/contactus", icon: "📞" }
+            { name: "Contact", href: "/contact", icon: "📞" }
   ];
 
   const contactInfo = [
@@ -43,7 +43,7 @@ const Footer = () => {
 
   const features = [
     { icon: Building, title: "Quality Education", desc: "Hands-on learning experiences" },
-    { icon: Users, title: "Strong Community", desc: "400+ active members" },
+    { icon: Users, title: "Strong Community", desc: "400+ general members" },
     { icon: Award, title: "Excellence", desc: "5+ years of leadership" },
     { icon: Globe, title: "Industry Connect", desc: "Bridge academia and industry" }
   ];

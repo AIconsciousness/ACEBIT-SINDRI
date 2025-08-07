@@ -16,10 +16,12 @@ import {
   Sparkles,
   Zap
 } from "lucide-react";
+import { useHistory } from "react-router-dom";
 import TestImg from "../../assets/images/aim.svg";
 import Vision from "../../assets/images/vision.svg";
 
 const TabSection = () => {
+  const history = useHistory();
   const [activeTab, setActiveTab] = useState("aim");
   const [currentWord, setCurrentWord] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -114,16 +116,16 @@ const TabSection = () => {
           
           {/* Horizontal Professional Heading */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center space-x-6">
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <div className="flex items-center justify-center space-x-4 sm:space-x-6">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 animate-slide-up" style={{animationDelay: '0.2s'}}>
                 WHO
               </h2>
               <div className="flex items-center space-x-2">
-                <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-slide-up" style={{animationDelay: '0.3s'}}></div>
-                <Star className="w-8 h-8 text-yellow-500 animate-spin" style={{animationDuration: '3s'}} />
-                <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-slide-up" style={{animationDelay: '0.4s'}}></div>
+                <div className="w-8 sm:w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-slide-up" style={{animationDelay: '0.3s'}}></div>
+                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-500 animate-spin" style={{animationDuration: '3s'}} />
+                <div className="w-8 sm:w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-slide-up" style={{animationDelay: '0.4s'}}></div>
               </div>
-              <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent animate-slide-up" style={{animationDelay: '0.5s'}}>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent animate-slide-up" style={{animationDelay: '0.5s'}}>
                 WE ARE
               </h2>
             </div>
@@ -132,21 +134,21 @@ const TabSection = () => {
           {/* Animated Subheading */}
           <div className="text-center mb-8 animate-slide-up" style={{animationDelay: '0.7s'}}>
             {/* Association of Civil Engineers Text */}
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-700 mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-700 mb-4 sm:mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent px-4">
               Association of Civil Engineers
             </h3>
             
             {/* Typing Animation */}
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-700 mb-4">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-700 mb-3 sm:mb-4 px-4">
               We{" "}
-              <span className="inline-block min-w-[200px] text-left">
+              <span className="inline-block min-w-[150px] sm:min-w-[200px] text-left">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-black">
                   {currentText}
                 </span>
                 <span className={`${isTyping ? 'animate-pulse' : ''} text-indigo-600`}>|</span>
               </span>
             </h3>
-            <p className="text-lg text-slate-600 font-medium">
+            <p className="text-base sm:text-lg text-slate-600 font-medium px-4">
               construct • coordinate • communicate
             </p>
           </div>
@@ -158,14 +160,14 @@ const TabSection = () => {
         </div>
 
         {/* Horizontal Professional Tab Navigation */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-white rounded-3xl p-3 shadow-2xl border border-gray-100 backdrop-blur-sm">
-            <div className="flex space-x-2">
+        <div className="flex justify-center mb-16 px-4">
+          <div className="bg-white rounded-3xl p-2 sm:p-3 shadow-2xl border border-gray-100 backdrop-blur-sm w-auto max-w-lg">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               {tabs.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-105 flex items-center space-x-3 relative overflow-hidden ${
+                  className={`px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all duration-500 hover:scale-105 flex items-center justify-center space-x-2 relative overflow-hidden ${
                     activeTab === tab.id
                       ? `bg-gradient-to-r ${tab.color} text-white shadow-xl transform scale-105`
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -177,8 +179,8 @@ const TabSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-2xl animate-pulse"></div>
                   )}
                   
-                  <tab.icon className={`w-7 h-7 ${activeTab === tab.id ? 'animate-bounce' : ''}`} />
-                  <span className="font-black">{tab.title}</span>
+                  <tab.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${activeTab === tab.id ? 'animate-bounce' : ''}`} />
+                  <span className="font-black text-xs sm:text-sm">{tab.title}</span>
                   
                   {/* Hover Sparkle Effect */}
                   <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300">
@@ -192,7 +194,7 @@ const TabSection = () => {
 
         {/* Enhanced Content Section */}
         <div className="animate-slide-up" style={{animationDelay: '1.1s'}}>
-          <div className={`bg-gradient-to-br ${activeContent.bgColor} rounded-3xl p-12 shadow-2xl border border-gray-100 relative overflow-hidden`}>
+          <div className={`bg-gradient-to-br ${activeContent.bgColor} rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden`}>
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 opacity-10" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -210,32 +212,34 @@ const TabSection = () => {
                     {activeContent.title}
                   </div>
                   
-                  <h3 className="text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight animate-slide-up" style={{animationDelay: '0.1s'}}>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 mb-4 sm:mb-6 leading-tight animate-slide-up" style={{animationDelay: '0.1s'}}>
                     {activeContent.content.title}
                   </h3>
                   
-                  <p className="text-xl text-slate-600 leading-relaxed mb-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
+                  <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-6 sm:mb-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
                     {activeContent.content.description}
                   </p>
                 </div>
 
                 {/* Enhanced Highlights with Animations */}
-                <div className="space-y-4 animate-slide-up" style={{animationDelay: '0.3s'}}>
+                <div className="space-y-3 sm:space-y-4 animate-slide-up" style={{animationDelay: '0.3s'}}>
                   {activeContent.content.highlights.map((highlight, index) => (
-                    <div key={index} className="flex items-center space-x-4 group hover:scale-105 transition-transform duration-300">
-                      <div className={`w-10 h-10 bg-gradient-to-r ${activeContent.color} rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
-                        <CheckCircle className="w-6 h-6 text-white group-hover:animate-bounce" />
+                    <div key={index} className="flex items-center space-x-3 sm:space-x-4 group hover:scale-105 transition-transform duration-300">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r ${activeContent.color} rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:animate-bounce" />
                       </div>
-                      <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{highlight}</span>
+                      <span className="text-sm sm:text-base md:text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors duration-300">{highlight}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Enhanced CTA Button */}
-                <button className="group relative px-10 py-5 bg-gradient-to-r from-slate-900 to-slate-700 text-white font-black rounded-full text-xl transition-all duration-500 hover:from-slate-800 hover:to-slate-600 hover:scale-110 hover:shadow-2xl flex items-center mt-10 animate-slide-up" style={{animationDelay: '0.4s'}}>
-                  <Zap className="w-6 h-6 mr-3 group-hover:animate-pulse" />
+                <button 
+                  onClick={() => history.push('/about')}
+                  className="group relative px-6 sm:px-8 md:px-10 py-4 sm:py-5 bg-gradient-to-r from-slate-900 to-slate-700 text-white font-black rounded-full text-base sm:text-lg md:text-xl transition-all duration-500 hover:from-slate-800 hover:to-slate-600 hover:scale-110 hover:shadow-2xl flex items-center justify-center mt-8 sm:mt-10 animate-slide-up" style={{animationDelay: '0.4s'}}>
+                  <Zap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-pulse" />
                   Learn More About ACE
-                  <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-300" />
                   
                   {/* Button Glow Effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -249,7 +253,7 @@ const TabSection = () => {
                   <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
                   
                   {/* Enhanced Image Container */}
-                  <div className="relative bg-white rounded-3xl p-10 shadow-2xl border border-gray-100 hover:shadow-3xl transition-shadow duration-500 animate-slide-up" style={{animationDelay: '0.5s'}}>
+                  <div className="relative bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-3xl transition-shadow duration-500 animate-slide-up" style={{animationDelay: '0.5s'}}>
                     <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-3xl"></div>
                     <img 
                       src={activeContent.content.image} 
@@ -257,9 +261,9 @@ const TabSection = () => {
                       className="w-full h-auto object-contain relative z-10 hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                </div>
-              </Col>
-            </Row>
+            </div>
+          </Col>
+        </Row>
           </div>
         </div>
       </Container>

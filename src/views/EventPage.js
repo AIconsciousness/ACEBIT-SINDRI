@@ -16,6 +16,19 @@ import {
   ExternalLink
 } from "lucide-react";
 
+// Import real event images
+import e1 from "../assets/images/events/e1.jpg"; // Brainwave/Avlokan
+import e2 from "../assets/images/events/e2.jpg"; // E-Construct
+import e3 from "../assets/images/events/e3.jpg"; // World Engineering Day
+import e4 from "../assets/images/events/e4.jpg"; // Technical Events
+import e5 from "../assets/images/events/e5.jpg"; // Construction Management
+import e6 from "../assets/images/events/e6.jpg"; // Platinum Jubilee
+import e7 from "../assets/images/events/e7.jpg"; // General Events
+import e8 from "../assets/images/events/e8.jpg"; // RISCE Conference
+import e9 from "../assets/images/events/e9.jpg"; // Badlav
+import e10 from "../assets/images/events/e10.jpg"; // Additional Events
+import e11 from "../assets/images/events/e11.jpg"; // Additional Events
+
 const Events = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -25,7 +38,7 @@ const Events = () => {
       id: 1,
       name: "AVLOKAN'23",
       category: "avlocal",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop",
+      image: e3,
       date: "March 15-20, 2023",
       time: "9:00 AM - 6:00 PM",
       location: "BIT Sindri Campus",
@@ -39,7 +52,7 @@ const Events = () => {
       id: 2,
       name: "E-CONSTRUCT 2023",
       category: "e-construct",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
+      image: e2,
       date: "February 10-12, 2023",
       time: "10:00 AM - 5:00 PM",
       location: "BIT Sindri Auditorium",
@@ -53,7 +66,7 @@ const Events = () => {
       id: 3,
       name: "BADLAV - No More Hushh",
       category: "badlav",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
+      image: e1,
       date: "March 12, 2023",
       time: "10:00 AM - 2:00 PM",
       location: "DAV School, Tasra",
@@ -67,7 +80,7 @@ const Events = () => {
       id: 4,
       name: "Technical Lecture Series",
       category: "lecture-series",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop",
+      image: e6,
       date: "Ongoing",
       time: "2:00 PM - 4:00 PM",
       location: "Department Seminar Hall",
@@ -81,7 +94,7 @@ const Events = () => {
       id: 5,
       name: "Innovation Challenge 2023",
       category: "others",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
+      image: e4,
       date: "April 5-7, 2023",
       time: "9:00 AM - 6:00 PM",
       location: "BIT Sindri Campus",
@@ -95,7 +108,7 @@ const Events = () => {
       id: 6,
       name: "Industry Connect Meet",
       category: "others",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop",
+      image: e5,
       date: "May 15, 2023",
       time: "11:00 AM - 3:00 PM",
       location: "BIT Sindri Auditorium",
@@ -104,6 +117,36 @@ const Events = () => {
       participants: "250+",
       status: "completed",
       highlights: ["Networking", "Career Guidance", "Internship Opportunities", "Industry Insights"]
+    },
+    {
+      id: 7,
+      name: "RISCE-2024 International Conference",
+      category: "others",
+      image: e8,
+      date: "December 15-17, 2024",
+      time: "9:00 AM - 6:00 PM",
+      location: "Department of Civil Engineering, B.I.T. Sindri",
+      description: "The 3rd International Conference on Recent Innovations in Science & Civil Engineering (RISCE-2024) focusing on sustainable development and innovation.",
+      longDescription: "RISCE-2024 is the 3rd International Conference on Recent Innovations in Science & Civil Engineering, bringing together researchers, academicians, field practitioners, and policy makers. The conference aims to share experiences and knowledge in research and innovation to solve real-life problems cost-effectively for the well-being of the Global Community.",
+      participants: "300+",
+      status: "upcoming",
+      highlights: ["International Conference", "Research Innovation", "Global Community", "Sustainable Development"],
+      website: "https://risce2024.com/index.html",
+      isSpecial: true
+    },
+    {
+      id: 8,
+      name: "Brainwave - Group Discussion",
+      category: "avlocal",
+      image: e9,
+      date: "December 1, 2023",
+      time: "2:00 PM - 5:00 PM",
+      location: "BIT Sindri Seminar Hall",
+      description: "ACE BITS organised BRAINWAVE - A Conclave Group Discussion event as GDs are an important part of the collaborative and cooperative learning process.",
+      longDescription: "BRAINWAVE - Group Discussion was a comprehensive event designed to enhance communication and analytical skills of students. The event featured structured group discussions on contemporary topics, helping participants develop critical thinking and articulation abilities. Industry experts served as judges and provided valuable feedback to participants.",
+      participants: "80+",
+      status: "completed",
+      highlights: ["Group Discussion", "Critical Thinking", "Communication Skills", "Expert Feedback"]
     }
   ];
 
@@ -395,7 +438,7 @@ const Events = () => {
           </div>
         </Container>
       </section>
-    </div>
+      </div> 
   );
 };
 

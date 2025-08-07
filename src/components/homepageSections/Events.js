@@ -87,7 +87,7 @@ const Events = () => {
   ];
 
   const eventStats = [
-    { icon: Calendar, value: "50+", label: "Events Organized", color: "text-blue-600" },
+    { icon: Calendar, value: "100+", label: "Events Organized", color: "text-blue-600" },
     { icon: Users, value: "1000+", label: "Participants", color: "text-green-600" },
     { icon: Award, value: "25+", label: "Awards Won", color: "text-purple-600" },
     { icon: TrendingUp, value: "95%", label: "Success Rate", color: "text-orange-600" }

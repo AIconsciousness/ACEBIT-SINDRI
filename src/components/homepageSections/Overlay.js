@@ -26,7 +26,7 @@ class FlamelabConversationWidget extends React.Component {
               <span>Hey! have any query?<br/>Feel free to ask..</span>
               <div className="flamelab-cw-buttons">
                 <a
-                  href="/contactus"
+                  href="/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flamelab-cw-button flamelab-cw-button-yes"

@@ -40,7 +40,7 @@ const Navbar = () => {
       dropdown: [
         { name: "Constitution", href: "/constitution" },
         { name: "Magazine", href: "/magazine" },
-        { name: "Contact Us", href: "/contactus" },
+        { name: "Contact Us", href: "/contact" },
         { name: "Laboratory", href: "/lab" }
       ]
     }

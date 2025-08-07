@@ -44,7 +44,7 @@ const Team2k21 = () => {
   const teamData = [
     {
       name: "Ashish Jha",
-      position: "President",
+      position: "Counselling Team",
       image: ashish_jha,
       linkedin: "https://linkedin.com/in/ashish-jha",
       email: "ashish.jha@bitsindri.ac.in",
@@ -52,7 +52,7 @@ const Team2k21 = () => {
     },
     {
       name: "Amarnath",
-      position: "Vice President",
+      position: "Operational Team",
       image: amarnath,
       linkedin: "https://linkedin.com/in/amarnath",
       email: "amarnath@bitsindri.ac.in",
@@ -60,7 +60,7 @@ const Team2k21 = () => {
     },
     {
       name: "Sanya Deo",
-      position: "General Secretary",
+      position: "Operational Team",
       image: sanya_deo,
       linkedin: "https://linkedin.com/in/sanya-deo",
       email: "sanya.deo@bitsindri.ac.in",
@@ -68,7 +68,7 @@ const Team2k21 = () => {
     },
     {
       name: "Prince Michael",
-      position: "Joint Secretary",
+      position: "Industrial relation Team",
       image: princemichal,
       linkedin: "https://linkedin.com/in/prince-michael",
       email: "prince.michael@bitsindri.ac.in",
@@ -76,7 +76,7 @@ const Team2k21 = () => {
     },
     {
       name: "Shruti Roy",
-      position: "Treasurer",
+      position: "Industrial relation Team",
       image: shrutiroy,
       linkedin: "https://linkedin.com/in/shruti-roy",
       email: "shruti.roy@bitsindri.ac.in",
@@ -84,7 +84,7 @@ const Team2k21 = () => {
     },
     {
       name: "Rudra",
-      position: "Technical Head",
+      position: "Alumni relation Team",
       image: rudra,
       linkedin: "https://linkedin.com/in/rudra",
       email: "rudra@bitsindri.ac.in",
@@ -92,7 +92,7 @@ const Team2k21 = () => {
     },
     {
       name: "Ajay Mahato",
-      position: "Event Coordinator",
+      position: "Designing Team",
       image: ajaymahato,
       linkedin: "https://linkedin.com/in/ajay-mahato",
       email: "ajay.mahato@bitsindri.ac.in",
@@ -100,7 +100,7 @@ const Team2k21 = () => {
     },
     {
       name: "Gautam",
-      position: "Public Relations",
+      position: "Designing Team",
       image: gautam,
       linkedin: "https://linkedin.com/in/gautam",
       email: "gautam@bitsindri.ac.in",
@@ -108,7 +108,7 @@ const Team2k21 = () => {
     },
     {
       name: "Mehar Talat",
-      position: "Cultural Secretary",
+      position: "Designing Team",
       image: mehartalat,
       linkedin: "https://linkedin.com/in/mehar-talat",
       email: "mehar.talat@bitsindri.ac.in",
@@ -116,7 +116,7 @@ const Team2k21 = () => {
     },
     {
       name: "Abhipriya",
-      position: "Academic Coordinator",
+      position: "Editorial Team",
       image: abhipriya,
       linkedin: "https://linkedin.com/in/abhipriya",
       email: "abhipriya@bitsindri.ac.in",
@@ -124,7 +124,7 @@ const Team2k21 = () => {
     },
     {
       name: "Ayushi",
-      position: "Social Media Manager",
+      position: "Editorial Team",
       image: ayushi,
       linkedin: "https://linkedin.com/in/ayushi",
       email: "ayushi@bitsindri.ac.in",
@@ -132,7 +132,7 @@ const Team2k21 = () => {
     },
     {
       name: "Sakshi",
-      position: "Content Writer",
+      position: "Research & Application",
       image: sakshi,
       linkedin: "https://linkedin.com/in/sakshi",
       email: "sakshi@bitsindri.ac.in",
@@ -140,7 +140,7 @@ const Team2k21 = () => {
     },
     {
       name: "Anurag",
-      position: "Technical Coordinator",
+      position: "Ideation Team",
       image: anurag,
       linkedin: "https://linkedin.com/in/anurag",
       email: "anurag@bitsindri.ac.in",
@@ -148,7 +148,7 @@ const Team2k21 = () => {
     },
     {
       name: "Vicky",
-      position: "Sports Coordinator",
+      position: "Public Relation Team",
       image: vicky,
       linkedin: "https://linkedin.com/in/vicky",
       email: "vicky@bitsindri.ac.in",
@@ -156,7 +156,7 @@ const Team2k21 = () => {
     },
     {
       name: "Dimple",
-      position: "Welfare Secretary",
+      position: "Public Relation Team",
       image: dimple,
       linkedin: "https://linkedin.com/in/dimple",
       email: "dimple@bitsindri.ac.in",
@@ -164,7 +164,7 @@ const Team2k21 = () => {
     },
     {
       name: "Sagar Saw",
-      position: "Discipline Secretary",
+      position: "GATe-ESE Forum",
       image: sagarsaw,
       linkedin: "https://linkedin.com/in/sagar-saw",
       email: "sagar.saw@bitsindri.ac.in",
@@ -172,7 +172,7 @@ const Team2k21 = () => {
     },
     {
       name: "Shivam",
-      position: "Infrastructure Head",
+      position: "Ideation Team",
       image: shivam,
       linkedin: "https://linkedin.com/in/shivam",
       email: "shivam@bitsindri.ac.in",
@@ -180,7 +180,7 @@ const Team2k21 = () => {
     },
     {
       name: "Khushboo",
-      position: "Alumni Coordinator",
+      position: "Research & Application",
       image: khusboo,
       linkedin: "https://linkedin.com/in/khushboo",
       email: "khushboo@bitsindri.ac.in",
@@ -188,7 +188,7 @@ const Team2k21 = () => {
     },
     {
       name: "Sakshi Dhan",
-      position: "Research Coordinator",
+      position: "Research & Application",
       image: sakshidhan,
       linkedin: "https://linkedin.com/in/sakshi-dhan",
       email: "sakshi.dhan@bitsindri.ac.in",
@@ -196,7 +196,7 @@ const Team2k21 = () => {
     },
     {
       name: "Rajshree",
-      position: "Industry Connect",
+      position: "Alumni relation Team",
       image: rajshree,
       linkedin: "https://linkedin.com/in/rajshree",
       email: "rajshree@bitsindri.ac.in",
@@ -204,7 +204,7 @@ const Team2k21 = () => {
     },
     {
       name: "Aditya Anand",
-      position: "Innovation Head",
+      position: "Social Media Team",
       image: aditya,
       linkedin: "https://linkedin.com/in/aditya-anand",
       email: "aditya.anand@bitsindri.ac.in",
@@ -212,7 +212,7 @@ const Team2k21 = () => {
     },
     {
       name: "Sagar Saurabh",
-      position: "Project Coordinator",
+      position: "Social Media Team",
       image: sagar,
       linkedin: "https://linkedin.com/in/sagar-saurabh",
       email: "sagar.saurabh@bitsindri.ac.in",
@@ -220,7 +220,7 @@ const Team2k21 = () => {
     },
     {
       name: "Lakshmi Kumari",
-      position: "Women Cell Head",
+      position: "Operational Team",
       image: laxmi,
       linkedin: "https://linkedin.com/in/lakshmi-kumari",
       email: "lakshmi.kumari@bitsindri.ac.in",
@@ -228,7 +228,7 @@ const Team2k21 = () => {
     },
     {
       name: "Kunal",
-      position: "Digital Marketing",
+      position: "Alumni relation Team",
       image: kunal,
       linkedin: "https://linkedin.com/in/kunal",
       email: "kunal@bitsindri.ac.in",
@@ -236,7 +236,7 @@ const Team2k21 = () => {
     },
     {
       name: "Prabhat",
-      position: "Quality Assurance",
+      position: "Marketing Team",
       image: prabhat,
       linkedin: "https://linkedin.com/in/prabhat",
       email: "prabhat@bitsindri.ac.in",
@@ -244,7 +244,7 @@ const Team2k21 = () => {
     },
     {
       name: "Suman Toppo",
-      position: "Co-Editorial Team",
+      position: "CoEditorial Team",
       image: suman_topo,
       linkedin: "https://linkedin.com/in/suman-toppo",
       email: "suman.toppo@bitsindri.ac.in",
@@ -331,10 +331,13 @@ const Team2k21 = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {teamData.map((member, index) => (
               <div key={index} className="group">
-                <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                <div className="bg-white rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 border border-gray-100 relative overflow-hidden group-hover:border-purple-200">
+                  {/* Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/20 to-blue-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
                   {/* Member Image */}
-                  <div className="relative mb-6">
-                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-300 transition-all duration-300">
+                  <div className="relative mb-6 z-10">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-300 transition-all duration-300 group-hover:scale-105">
                       <img 
                         src={member.image} 
                         alt={member.name}
@@ -349,11 +352,13 @@ const Team2k21 = () => {
                   </div>
 
                   {/* Member Info */}
-                  <div className="text-center">
+                  <div className="text-center relative z-10">
                     <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors duration-300">
                       {member.name}
                     </h3>
-                    <p className="text-purple-600 font-semibold mb-3">{member.position}</p>
+                    <div className="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-3 py-1 rounded-full text-sm font-bold mb-3 inline-block">
+                      {member.position}
+                    </div>
 
                     {/* Contact Info */}
                     <div className="space-y-2 mb-4">

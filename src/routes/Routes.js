@@ -63,7 +63,7 @@ const CommonRoutes = () => {
       <Route exact path="/register/complete" component={RegisterComplete} />
       <Route exact path="/forgot/password" component={ForgotPassword} />
       <Route exact path="/blogs/hyperloops" component={HyperLoop} />;
-      <Route exact path="/contactus" component={ContactForm} />;
+      <Route exact path="/contact" component={ContactForm} />
     </Switch>
   );
 };

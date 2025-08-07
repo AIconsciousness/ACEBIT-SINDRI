@@ -37,13 +37,13 @@ import abhijeet_anand from "../assets/images/faculty/abhijeet_anand.webp";
 const Faculty = () => {
   const facultyData = [
     {
-      name: "Dr. Jitendra Kumar",
+      name: "Dr. Jitu Kujur",
       position: "Head of Department",
       image: jituhod,
-      email: "jitendra.kumar@bitsindri.ac.in",
+      email: "jitu.kujur@bitsindri.ac.in",
       phone: "+91-94311-12345",
       specialization: "Structural Engineering",
-      linkedin: "https://linkedin.com/in/jitendra-kumar"
+      linkedin: "https://linkedin.com/in/jitu-kujur"
     },
     {
       name: "Dr. Vikrama Pandey",
@@ -56,7 +56,7 @@ const Faculty = () => {
     },
     {
       name: "Dr. Sanjay Shukla",
-      position: "Professor",
+      position: "Adjunct Professor",
       image: sanjay_shukla,
       email: "sanjay.shukla@bitsindri.ac.in",
       phone: "+91-94311-12347",
@@ -65,7 +65,7 @@ const Faculty = () => {
     },
     {
       name: "Dr. U.K. Singh",
-      position: "Associate Professor",
+      position: "Professor",
       image: uksingh,
       email: "uk.singh@bitsindri.ac.in",
       phone: "+91-94311-12348",
@@ -74,7 +74,7 @@ const Faculty = () => {
     },
     {
       name: "Dr. Ranvijay Kumar",
-      position: "Associate Professor",
+      position: "Professor",
       image: ranvijay,
       email: "ranvijay.kumar@bitsindri.ac.in",
       phone: "+91-94311-12349",

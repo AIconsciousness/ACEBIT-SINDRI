@@ -14,13 +14,13 @@ const StatsSection = () => {
     { 
       icon: Users, 
       value: 400, 
-      label: "Active Members", 
+      label: "General Members", 
       color: "from-blue-500 to-cyan-500",
       key: "members"
     },
     { 
       icon: Award, 
-      value: 50, 
+      value: 100, 
       label: "Events Organized", 
       color: "from-green-500 to-emerald-500",
       key: "events"
@@ -133,18 +133,18 @@ const StatsSection = () => {
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
             }}></div>
             
-            <div className="relative z-10 text-center">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mr-3">
+            <div className="relative z-10">
+              <div className="flex flex-col sm:flex-row items-center justify-center mb-4 text-center sm:text-left">
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-3 flex-shrink-0">
                   <Building className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold">Leading Student Organization</h3>
+                <div className="sm:ml-2">
+                  <h3 className="text-lg sm:text-xl font-bold">Leading Student Organization</h3>
                   <p className="text-emerald-100 text-sm">In Civil Engineering at BIT Sindri</p>
                 </div>
               </div>
               
-              <p className="text-emerald-100 text-sm max-w-2xl mx-auto">
+              <p className="text-emerald-100 text-sm max-w-2xl mx-auto text-center">
                 Since our establishment, we have been at the forefront of civil engineering education, 
                 fostering innovation, collaboration, and excellence among students.
               </p>

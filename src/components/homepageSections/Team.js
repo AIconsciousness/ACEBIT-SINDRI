@@ -14,8 +14,11 @@ import {
   Heart,
   TrendingUp
 } from "lucide-react";
+import { useHistory } from "react-router-dom";
 
 const Team = () => {
+  const history = useHistory();
+  
   const coreTeam = [
     {
       name: "Prince Michael",
@@ -263,7 +266,10 @@ const Team = () => {
                     {dept.description}
                   </p>
                   
-                  <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold py-3 px-6 rounded-xl hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 hover:scale-105">
+                  <button 
+                    onClick={() => history.push('/about')}
+                    className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold py-3 px-6 rounded-xl hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 hover:scale-105"
+                  >
                     Learn More
                   </button>
                 </div>
@@ -296,10 +302,16 @@ const Team = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 hover:scale-105">
+                <button 
+                  onClick={() => history.push('/contact')}
+                  className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 hover:scale-105"
+                >
                   Apply Now
                 </button>
-                <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:scale-105">
+                <button 
+                  onClick={() => history.push('/about')}
+                  className="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:scale-105"
+                >
                   Learn More
                 </button>
               </div>

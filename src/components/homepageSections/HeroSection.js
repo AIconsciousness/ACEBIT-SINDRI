@@ -1,8 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Play, Users, Award, BookOpen, ChevronDown, Building, GraduationCap, Globe } from "lucide-react";
+import { useHistory } from "react-router-dom";
 
 const HeroSection = () => {
+  const history = useHistory();
+  
   const features = [
     { icon: GraduationCap, title: "Quality Education", desc: "Hands-on learning experiences" },
     { icon: Globe, title: "Industry Connect", desc: "Bridge academia and industry" },
@@ -67,13 +70,19 @@ const HeroSection = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{animationDelay: '0.8s'}}>
-                  <button className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:from-yellow-400 hover:to-orange-400 hover:scale-105 hover:shadow-2xl flex items-center justify-center">
+                  <button 
+                    onClick={() => history.push('/about')}
+                    className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:from-yellow-400 hover:to-orange-400 hover:scale-105 hover:shadow-2xl flex items-center justify-center"
+                  >
                     <Play size={20} className="mr-2 group-hover:animate-pulse" />
                     Explore About Us
                     <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   </button>
 
-                  <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center">
+                  <button 
+                    onClick={() => history.push('/contact')}
+                    className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                  >
                     <Users size={20} className="mr-2" />
                     Join Our Community
                   </button>
