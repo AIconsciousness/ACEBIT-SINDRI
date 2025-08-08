@@ -231,7 +231,7 @@ const Lab = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <div className="pt-24 pb-16 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      <div className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-20"></div>
@@ -244,13 +244,13 @@ const Lab = () => {
               <Microscope className="w-4 h-4 mr-2" />
               Advanced Laboratory Facilities
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6">
               <span className="block">CIVIL ENGINEERING</span>
               <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                 LABORATORIES
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 px-4">
               State-of-the-art laboratory facilities equipped with modern instruments and equipment for comprehensive learning and advanced research in civil engineering
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -269,16 +269,16 @@ const Lab = () => {
       </div>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</h3>
-                <p className="text-slate-600 font-medium">{stat.label}</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-1 sm:mb-2">{stat.value}</h3>
+                <p className="text-slate-600 font-medium text-xs sm:text-sm md:text-base">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -286,46 +286,46 @@ const Lab = () => {
       </section>
 
       {/* Laboratory Grid Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <div className="text-center mb-16 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Our Laboratory
               <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Facilities
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
               Comprehensive range of specialized laboratories designed to provide hands-on experience and advanced research opportunities
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {laboratories.map((lab, index) => (
-              <div key={lab.id} className="group bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+              <div key={lab.id} className="group bg-white rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${lab.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                 
                 <div className="relative z-10">
                   {/* Lab Icon & Header */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${lab.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                      <lab.icon className="w-8 h-8 text-white" />
+                  <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${lab.color} rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                      <lab.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
                         {lab.name}
                       </h3>
-                      <div className={`w-12 h-1 bg-gradient-to-r ${lab.color} rounded-full`}></div>
+                      <div className={`w-8 sm:w-12 h-1 bg-gradient-to-r ${lab.color} rounded-full`}></div>
                     </div>
                   </div>
 
                   {/* Lab Image - Clickable */}
-                  <div className="relative mb-6 rounded-2xl overflow-hidden cursor-pointer" onClick={() => openImageModal(lab.image, lab.name)}>
+                  <div className="relative mb-4 sm:mb-6 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer" onClick={() => openImageModal(lab.image, lab.name)}>
                     <img 
                       src={lab.image} 
                       alt={lab.name}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-32 sm:h-40 md:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0" style={{background: 'linear-gradient(to top, rgba(0,0,0,0.2), transparent)'}}></div>
                     {/* Click Indicator */}
@@ -337,45 +337,45 @@ const Lab = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-slate-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                     {lab.description}
                   </p>
 
                   {/* Equipment & Applications */}
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2 flex items-center">
-                        <Wrench className="w-4 h-4 mr-2 text-blue-500" />
+                      <h4 className="font-semibold text-slate-900 mb-2 flex items-center text-sm sm:text-base">
+                        <Wrench className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-blue-500" />
                         Key Equipment
                       </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {lab.equipment.slice(0, 3).map((item, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                        {lab.equipment.slice(0, 2).map((item, idx) => (
+                          <span key={idx} className="px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 text-xs sm:text-sm rounded-full font-medium">
                             {item}
                           </span>
                         ))}
-                        {lab.equipment.length > 3 && (
-                          <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full font-medium">
-                            +{lab.equipment.length - 3} more
+                        {lab.equipment.length > 2 && (
+                          <span className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-600 text-xs sm:text-sm rounded-full font-medium">
+                            +{lab.equipment.length - 2} more
                           </span>
                         )}
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2 flex items-center">
-                        <Activity className="w-4 h-4 mr-2 text-green-500" />
+                      <h4 className="font-semibold text-slate-900 mb-2 flex items-center text-sm sm:text-base">
+                        <Activity className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-green-500" />
                         Applications
                       </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {lab.applications.slice(0, 3).map((item, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-green-50 text-green-700 text-sm rounded-full font-medium">
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                        {lab.applications.slice(0, 2).map((item, idx) => (
+                          <span key={idx} className="px-2 sm:px-3 py-1 bg-green-50 text-green-700 text-xs sm:text-sm rounded-full font-medium">
                             {item}
                           </span>
                         ))}
-                        {lab.applications.length > 3 && (
-                          <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full font-medium">
-                            +{lab.applications.length - 3} more
+                        {lab.applications.length > 2 && (
+                          <span className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-600 text-xs sm:text-sm rounded-full font-medium">
+                            +{lab.applications.length - 2} more
                           </span>
                         )}
                       </div>
@@ -400,18 +400,18 @@ const Lab = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%239C92AC\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"4\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"}}></div>
         
         <Container className="relative z-10">
-          <div className="text-center text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="text-center text-white px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Ready to Explore Our
               <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                 Laboratory Facilities?
               </span>
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
               Join us for a guided tour of our state-of-the-art laboratories and discover the advanced equipment and research opportunities available
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

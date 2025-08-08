@@ -5,8 +5,7 @@ import {
   Star, 
   Award, 
   Users, 
-  Heart, 
-  Sparkles,
+  Heart,
   ChevronLeft,
   ChevronRight,
   GraduationCap,
@@ -19,12 +18,13 @@ import {
 import jituhod from "../../assets/images/faculty/jituhod.webp";
 import pksharma from "../../assets/images/faculty/pksharma.webp";
 import prashantmalvia from "../../assets/images/faculty/prashantmalvia.webp";
-import sanjay_shukla from "../../assets/images/faculty/sanjay_shukla.webp";
 
 const PatronageSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [direction, setDirection] = useState('right');
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [progress, setProgress] = useState(0); // 0..100 autoplay progress
 
   const patrons = [
     {
@@ -33,10 +33,10 @@ const PatronageSection = () => {
       position: "Director",
       institution: "BIT Sindri",
       location: "Dhanbad, Jharkhand",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       quote: "I wish to express my appreciation and thanks to the professors and students whose many long hours of efforts in organizing activities made this association get significance and its true worth.",
       rating: 5,
-      color: "from-blue-500 to-cyan-500"
+      color: "from-indigo-600 via-purple-600 to-blue-600"
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const PatronageSection = () => {
       image: jituhod,
       quote: "I extend heartfelt gratitude to the professors and students whose dedicated efforts and countless hours organizing activities have bestowed significance upon this association.",
       rating: 5,
-      color: "from-purple-500 to-pink-500"
+      color: "from-emerald-600 via-teal-600 to-cyan-600"
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ const PatronageSection = () => {
       image: pksharma,
       quote: "I deeply appreciate the unwavering commitment of professors and students who dedicated countless hours to organizing activities.",
       rating: 5,
-      color: "from-green-500 to-emerald-500"
+      color: "from-orange-600 via-amber-600 to-yellow-600"
     },
     {
       id: 4,
@@ -69,20 +69,34 @@ const PatronageSection = () => {
       image: prashantmalvia,
       quote: "I want to express my deepest gratitude to both students and faculty for their invaluable contributions to our academic community. Thank you for your tireless efforts and involvement in our activities and events.",
       rating: 5,
-      color: "from-orange-500 to-red-500"
+      color: "from-rose-600 via-pink-600 to-fuchsia-600"
     }
   ];
 
+  // Drive autoplay via animated progress so we can show a progress bar (slower animation)
   useEffect(() => {
     if (!isAutoPlaying) return;
-
-    const interval = setInterval(() => {
-      setDirection('right');
-      setCurrentIndex((prev) => (prev + 1) % patrons.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
+    const durationMs = 6000; // Increased from 4000ms to 6000ms for slower animation
+    const tickMs = 50;
+    const step = (100 * tickMs) / durationMs; // 0.83 per tick (slower)
+    const id = setInterval(() => {
+      setProgress((p) => {
+        const next = p + step;
+        if (next >= 100) {
+          setDirection('right');
+          setCurrentIndex((prev) => (prev + 1) % patrons.length);
+          return 0;
+        }
+        return next;
+      });
+    }, tickMs);
+    return () => clearInterval(id);
   }, [isAutoPlaying, patrons.length]);
+
+  // Reset progress whenever currentIndex changes manually
+  useEffect(() => {
+    setProgress(0);
+  }, [currentIndex]);
 
   const nextPatron = () => {
     setDirection('right');
@@ -102,10 +116,26 @@ const PatronageSection = () => {
     setIsAutoPlaying(false);
   };
 
+  const handleMouseMove = (e) => {
+    // Reduce tilt on touch devices
+    if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width; // 0..1
+    const py = (e.clientY - rect.top) / rect.height; // 0..1
+    const maxDeg = 6;
+    const tiltY = (px - 0.5) * 2 * maxDeg; // left-right
+    const tiltX = (0.5 - py) * 2 * maxDeg; // up-down
+    setTilt({ x: tiltX, y: tiltY });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
+
   const currentPatron = patrons[currentIndex];
 
   return (
-    <section className="py-8 sm:py-12 md:py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 relative overflow-hidden">
+    <section className="py-8 sm:py-12 md:py-20 bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-950 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -123,8 +153,8 @@ const PatronageSection = () => {
             <Award className="w-4 h-4 sm:w-6 sm:h-6 mr-2 sm:mr-3 animate-pulse" />
             Our Esteemed Patrons
             <Award className="w-4 h-4 sm:w-6 sm:h-6 ml-2 sm:ml-3 animate-pulse" />
-          </div>
-          
+      </div>
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white mb-4 sm:mb-6 animate-slide-up" style={{animationDelay: '0.2s'}}>
             LEADERSHIP
             <span className="block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
@@ -135,29 +165,85 @@ const PatronageSection = () => {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed animate-slide-up px-4" style={{animationDelay: '0.4s'}}>
             Meet the distinguished leaders who guide and inspire our academic excellence and innovation
           </p>
-        </div>
+              </div>
 
-        {/* Main Patronage Display */}
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 border border-white/20 relative overflow-hidden animate-slide-up" style={{animationDelay: '0.6s'}}>
+                {/* Main Patronage Display */}
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 border border-white/20 relative overflow-hidden animate-slide-up will-change-transform"
+            style={{ animationDelay: '0.6s', transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseOut={() => setIsAutoPlaying(true)}
+          >
             {/* Background Gradient */}
             <div className={`absolute inset-0 bg-gradient-to-r ${currentPatron.color} opacity-10 transition-all duration-1000`}></div>
-            
+            {/* Radial glow + subtle noise */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_60%)]"></div>
+
             <div className="relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 items-center">
-                {/* Patron Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 items-center">
+                
+                {/* Left Side Patron List */}
+                <div className="hidden lg:block lg:col-span-1">
+                  <div className="space-y-3">
+                    {patrons.map((patron, index) => (
+                      <button
+                        key={patron.id}
+                        onClick={() => goToPatron(index)}
+                        className={`w-full text-left p-3 rounded-2xl transition-all duration-500 transform hover:scale-105 group border ${
+                          currentIndex === index
+                            ? `bg-gradient-to-r ${patron.color} text-white shadow-lg scale-105 border-white/30`
+                            : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border-white/10"
+                        }`}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-10 h-10 rounded-full overflow-hidden ring-2 transition-all duration-300 ${
+                            currentIndex === index ? 'ring-white/50' : 'ring-white/20'
+                          }`}>
+                            <img 
+                              src={patron.image} 
+                              alt={patron.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className={`text-sm font-bold truncate ${
+                              currentIndex === index ? 'text-white' : 'text-gray-200'
+                            }`}>
+                              {patron.name}
+                            </p>
+                            <p className={`text-xs truncate opacity-80 ${
+                              currentIndex === index ? 'text-white/90' : 'text-gray-400'
+                            }`}>
+                              {patron.position}
+                            </p>
+                          </div>
+                        </div>
+                        {/* Active indicator */}
+                        {currentIndex === index && (
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-white rounded-r-full shadow-lg"></div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                                {/* Center - Patron Image */}
                 <div className="lg:col-span-1">
                   <div className="relative">
-                    <div className={`w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden ring-4 sm:ring-6 md:ring-8 ring-white/20 shadow-2xl transition-all duration-1000 hover:scale-105 transform ${
+                    <div className={`w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto rounded-full overflow-hidden ring-4 sm:ring-6 md:ring-8 ring-white/20 shadow-2xl transition-all duration-1000 hover:scale-105 transform-gpu ${
                       direction === 'right' ? 'animate-slide-in-right' : 'animate-slide-in-left'
                     }`}>
-                      <img 
-                        src={currentPatron.image} 
+                      <img
+                        src={currentPatron.image}
                         alt={currentPatron.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover will-change-transform"
+                        style={{ transform: `translate3d(${tilt.y * 1.2}px, ${-tilt.x * 1.2}px, 0) scale(1.02)` }}
                       />
                     </div>
-                    
+
                     {/* Floating Elements */}
                     <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
                       <Star className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
@@ -175,7 +261,7 @@ const PatronageSection = () => {
                   </div>
                 </div>
 
-                {/* Patron Content */}
+                {/* Center - Patron Content */}
                 <div className="lg:col-span-2">
                   <div className="text-center lg:text-left">
                     {/* Quote Icon */}
@@ -226,9 +312,60 @@ const PatronageSection = () => {
                     </div>
                   </div>
                 </div>
+
+
               </div>
             </div>
+
+            {/* Autoplay progress bar */}
+            <div className="absolute left-0 right-0 top-0 h-1 bg-white/10">
+              <div
+                className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-[width] duration-50"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
           </div>
+
+                    {/* Mobile Patron List (horizontal scrolling) */}
+          <div className="lg:hidden mt-8 sm:mt-12">
+            <div className="flex space-x-3 overflow-x-auto pb-4 px-4 scrollbar-hide">
+              {patrons.map((patron, index) => (
+                <button
+                  key={`mobile-${patron.id}`}
+                  onClick={() => goToPatron(index)}
+                  className={`flex-shrink-0 p-3 rounded-2xl transition-all duration-500 transform hover:scale-105 border ${
+                    currentIndex === index
+                      ? `bg-gradient-to-r ${patron.color} text-white shadow-lg scale-105 border-white/30`
+                      : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border-white/10"
+                  }`}
+                >
+                  <div className="flex flex-col items-center space-y-2 min-w-[80px]">
+                    <div className={`w-12 h-12 rounded-full overflow-hidden ring-2 transition-all duration-300 ${
+                      currentIndex === index ? 'ring-white/50' : 'ring-white/20'
+                    }`}>
+                      <img 
+                        src={patron.image} 
+                        alt={patron.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className={`text-xs font-bold leading-tight ${
+                        currentIndex === index ? 'text-white' : 'text-gray-200'
+                      }`}>
+                        {patron.name.split(' ').slice(0, 2).join(' ')}
+                      </p>
+                      <p className={`text-xs opacity-80 leading-tight ${
+                        currentIndex === index ? 'text-white/90' : 'text-gray-400'
+                      }`}>
+                        {patron.position.split(' ').slice(0, 2).join(' ')}
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+              </div>
 
           {/* Navigation Controls */}
           <div className="flex justify-center items-center mt-8 sm:mt-12 space-x-4 sm:space-x-8">
@@ -309,8 +446,8 @@ const PatronageSection = () => {
             </div>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">100%</h3>
             <p className="text-gray-300 text-xs sm:text-sm md:text-base">Satisfaction</p>
-          </div>
-        </div>
+      </div>
+    </div>
       </Container>
     </section>
   );

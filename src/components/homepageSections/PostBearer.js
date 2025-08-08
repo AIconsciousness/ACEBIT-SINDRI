@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './homepage.css';
 import './card.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import president from "../../assets/images/team 2k21/princemichal.jpg"
 import vicePresident1 from "../../assets/images/team 2k21/Gautam.jpg"
 import vicePresident2 from "../../assets/images/team 2k21/suman_topo.jpg"
@@ -41,10 +41,11 @@ import sc from "../../assets/images/team 2k21/ajaymahato.jpeg";
 
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   const settings = {
     dots: true,
-    dots:6,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -52,71 +53,133 @@ function App() {
     autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
-  const handleClick = () => {
+  const gradientChoices = [
+    'from-fuchsia-500/30 via-violet-500/10 to-indigo-500/30',
+    'from-amber-500/30 via-orange-500/10 to-rose-500/30',
+    'from-emerald-500/30 via-teal-500/10 to-cyan-500/30',
+  ];
 
-  }
+  const openModal = (member) => {
+    setSelectedMember(member);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedMember(null);
+  };
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    if (isModalOpen) {
+      document.addEventListener('keydown', onKey);
+    }
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isModalOpen]);
+
   return (
-    <div className='PB_container'>
-      <div className='post-bearer'>
-        <h3 className='post-bearer-heading'>Post Bearers</h3>
-      </div>
-      <div className='w-full mt-0'>
-        <div className='mt-0'>
-          <div className='post-bearer-container'>
-            <Slider {...settings}>
-              {data.map((d, index) => (
-                <div key={index} className='card__collection clear-fix'>
-                  <div className='cards  cards--three'>
-                    {/* <div className='image_div'> */}
-                      <img
-                        src={d.img}
-                        className='img-responsive'
-                        alt='Post Image'
-                      />
-                    {/* </div> */}
-                    <span className='cards--three__rect-1'>
-                      <span className='shadow-1'></span>
-                      <h1>{d.review}</h1>
-                      <p>{d.name}</p>
-                    </span>
-                    <span className='cards--three__rect-2'>
-                      <span className='shadow-2'></span>
-                    </span>
-                    <span className='cards--three__circle'></span>
-                    <ul className='cards--three__list'>
-                      <li>
-                        <a href={d.url}><FontAwesomeIcon icon={faLinkedinIn} /></a>
-                      </li>
-                      {/* <li>
-                        <a><FontAwesomeIcon icon={faFacebook} /></a>
-                      </li>
-                      <li>
-                        <a><FontAwesomeIcon icon={faInstagram} /></a>
-                      </li> */}
-                    </ul>
+    <>
+    <section className="relative py-8 sm:py-12 md:py-16 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900/90">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between mb-6 sm:mb-8">
+          <h3 className="text-white text-2xl sm:text-3xl font-bold tracking-tight">
+            Post Bearers
+          </h3>
+          <div className="hidden sm:flex items-center gap-2 text-xs text-white/60">
+            <span className="inline-block w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></span>
+            <span className="uppercase tracking-wider">Leadership</span>
+          </div>
+        </div>
+
+        <Slider {...settings}>
+          {data.map((d, index) => {
+            const gradient = gradientChoices[index % gradientChoices.length];
+            return (
+              <div key={index} className="px-2 sm:px-3">
+                <button
+                  type="button"
+                  onClick={() => openModal(d)}
+                  className={`group relative w-full text-left rounded-2xl p-[2px] bg-gradient-to-br ${gradient} hover:shadow-[0_18px_40px_rgba(0,0,0,0.6)] transition-all duration-300 transform-gpu hover:-translate-y-1 hover:scale-[1.01]`}
+                >
+                  <div className="relative h-full rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-sm p-4 sm:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_12px_28px_rgba(0,0,0,0.5)]">
+                    <div className="relative mx-auto w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden ring-2 ring-white/30 group-hover:ring-white/60 transition">
+                      <img src={d.img} alt={d.name} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <span className="pointer-events-none absolute -top-6 -left-6 w-1/2 h-1/2 bg-white/10 blur-xl rounded-full opacity-60"></span>
+                    </div>
+
+                    <div className="mt-4 text-center">
+                      <div className="text-white text-base sm:text-lg font-semibold leading-snug">
+                        {d.name}
+                      </div>
+                      <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r from-yellow-500 to-orange-500 shadow-md">
+                        {d.review}
+                      </div>
+                    </div>
+
+                    <div className="mt-4 flex items-center justify-center gap-3">
+                      {d.url && (
+                        <a
+                          href={d.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open LinkedIn profile of ${d.name}`}
+                          className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/10 border border-white/20 text-white hover:text-blue-500 hover:bg-white/20 transition"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FontAwesomeIcon icon={faLinkedinIn} />
+                        </a>
+                      )}
+                    </div>
+
+                    <span className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                </button>
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
+    </section>
+
+    {isModalOpen && selectedMember && (
+      <div
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4"
+        onClick={closeModal}
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Profile image of ${selectedMember.name}`}
+      >
+        <div
+          className="relative max-w-3xl w-full"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={closeModal}
+            className="absolute -top-10 right-0 text-white/80 hover:text-white text-sm"
+            aria-label="Close image"
+          >
+            Close ✕
+          </button>
+          <img
+            src={selectedMember.img}
+            alt={selectedMember.name}
+            className="w-full h-auto rounded-2xl shadow-2xl"
+          />
+          <div className="mt-3 text-center text-white/80 text-sm">
+            {selectedMember.name} — {selectedMember.review}
           </div>
         </div>
       </div>
-    </div>
+    )}
+    </>
   );
 }
 
