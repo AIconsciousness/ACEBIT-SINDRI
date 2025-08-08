@@ -137,7 +137,7 @@ const Footer = () => {
                 <span className="text-white font-black text-2xl">A</span>
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white">ACE BITS SINDRI</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white">ACE BIT SINDRI</h2>
                 <p className="text-gray-400 text-lg">Association of Civil Engineers</p>
               </div>
             </div>
@@ -167,9 +167,9 @@ const Footer = () => {
           {/* Quick Navigation */}
           <div className="space-y-8">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-3">
+              <span className="inline-flex w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg items-center justify-center mr-3 md:mr-4 shrink-0 ring-1 ring-white/10 shadow">
                 <ExternalLink className="w-4 h-4 text-white" />
-              </div>
+              </span>
               <h3 className="text-2xl font-bold">Quick Links</h3>
             </div>
             <nav className="space-y-3">
@@ -189,9 +189,9 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
+              <span className="inline-flex w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg items-center justify-center mr-3 md:mr-4 shrink-0 ring-1 ring-white/10 shadow">
                 <Mail className="w-4 h-4 text-white" />
-              </div>
+              </span>
               <h3 className="text-2xl font-bold">Contact Us</h3>
             </div>
             <div className="space-y-4">
@@ -213,9 +213,9 @@ const Footer = () => {
           {/* Achievements */}
           <div className="space-y-8">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mr-3">
+              <span className="inline-flex w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg items-center justify-center mr-3 md:mr-4 shrink-0 ring-1 ring-white/10 shadow">
                 <Award className="w-4 h-4 text-white" />
-              </div>
+              </span>
               <h3 className="text-2xl font-bold">Our Achievements</h3>
             </div>
             <div className="space-y-4">
@@ -239,9 +239,9 @@ const Footer = () => {
           {/* Vision & Mission */}
           <div className="space-y-8">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mr-3">
+              <span className="inline-flex w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg items-center justify-center mr-3 md:mr-4 shrink-0 ring-1 ring-white/10 shadow">
                 <Target className="w-4 h-4 text-white" />
-              </div>
+              </span>
               <h3 className="text-2xl font-bold">Our Vision</h3>
             </div>
             <div className="space-y-3">
@@ -262,7 +262,9 @@ const Footer = () => {
         <div className="mt-16 p-8 bg-white/5 rounded-2xl border border-white/10">
           <div className="text-center">
             <div className="flex items-center justify-center mb-6">
-              <Globe className="w-6 h-6 text-yellow-400 mr-3" />
+              <span className="inline-flex w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg items-center justify-center mr-3 ring-1 ring-white/10 shadow">
+                <Globe className="w-4 h-4 text-white" />
+              </span>
               <h3 className="text-2xl font-bold text-white">Institute Mission</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-4xl mx-auto">
