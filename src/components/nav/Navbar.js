@@ -104,9 +104,9 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div
-          className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/20 animate-slide-down"
+          className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/20 animate-slide-down z-50"
         >
-          <div className="px-4 py-6 space-y-2">
+          <div className="px-4 py-6 space-y-2 max-h-[75vh] overflow-y-auto">
             {navItems.map((item, index) => (
               <MobileNavItem key={index} item={item} onClose={() => setIsOpen(false)} />
             ))}
