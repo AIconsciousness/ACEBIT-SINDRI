@@ -1,0 +1,186 @@
+[1mdiff --git a/ACEBIT-SINDRI-main/.env b/ACEBIT-SINDRI-main/.env[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dbb531b[m
+[1m--- /dev/null[m
+[1m+++ b/ACEBIT-SINDRI-main/.env[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mREACT_APP_BACKEND_API="https://viking-app-server.herokuapp.com/api"[m
+[32m+[m[32mREACT_APP_STRIPE_KEY=pk_test_51HQFoOAYsAxKBYNprna363zX7d7I1KpFiyxI5rVIBiWGEfwDLmSPRnErIPcSdrXx0LSf5grYOkckEi9SHWjiRSeQ004Mcf2MJq[m
+\ No newline at end of file[m
+[1mdiff --git a/ACEBIT-SINDRI-main/.gitignore b/ACEBIT-SINDRI-main/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4d29575[m
+[1m--- /dev/null[m
+[1m+++ b/ACEBIT-SINDRI-main/.gitignore[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32m# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.[m
+[32m+[m
+[32m+[m[32m# dependencies[m
+[32m+[m[32m/node_modules[m
+[32m+[m[32m/.pnp[m
+[32m+[m[32m.pnp.js[m
+[32m+[m
+[32m+[m[32m# testing[m
+[32m+[m[32m/coverage[m
+[32m+[m
+[32m+[m[32m# production[m
+[32m+[m[32m/build[m
+[32m+[m
+[32m+[m[32m# misc[m
+[32m+[m[32m.DS_Store[m
+[32m+[m[32m.env.local[m
+[32m+[m[32m.env.development.local[m
+[32m+[m[32m.env.test.local[m
+[32m+[m[32m.env.production.local[m
+[32m+[m
+[32m+[m[32mnpm-debug.log*[m
+[32m+[m[32myarn-debug.log*[m
+[32m+[m[32myarn-error.log*[m
+[1mdiff --git a/ACEBIT-SINDRI-main/.npmrc b/ACEBIT-SINDRI-main/.npmrc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..347ae0d[m
+[1m--- /dev/null[m
+[1m+++ b/ACEBIT-SINDRI-main/.npmrc[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mlegacy-peer-deps=true[m
+[32m+[m[32mstrict-peer-dependencies=false[m[41m [m
+\ No newline at end of file[m
+[1mdiff --git a/ACEBIT-SINDRI-main/.nvmrc b/ACEBIT-SINDRI-main/.nvmrc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..75d6bf8[m
+[1m--- /dev/null[m
+[1m+++ b/ACEBIT-SINDRI-main/.nvmrc[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m20.11.0[m[41m [m
+\ No newline at end of file[m
+[1mdiff --git a/ACEBIT-SINDRI-main/README.md b/ACEBIT-SINDRI-main/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f3bf438[m
+[1m--- /dev/null[m
+[1m+++ b/ACEBIT-SINDRI-main/README.md[m
+[36m@@ -0,0 +1,240 @@[m
+[32m+[m[32m# 🏗️ ACE BITS - Association of Civil Engineers[m
+[32m+[m
+[32m+[m[32m[![React](https://img.shields.io/badge/React-17.0.2-blue.svg)](https://reactjs.org/)[m
+[32m+[m[32m[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.4-blue.svg)](https://www.typescriptlang.org/)[m
+[32m+[m[32m[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.3-38B2AC.svg)](https://tailwindcss.com/)[m
+[32m+[m[32m[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.12-purple.svg)](https://www.framer.com/motion/)[m
+[32m+[m
+[32m+[m[32m> **Building the future through innovation, collaboration, and excellence in civil engineering at BIT Sindri, Dhanbad**[m
+[32m+[m
+[32m+[m[32m## 🎯 About ACE BITS[m
+[32m+[m
+[32m+[m[32mThe **Association of Civil Engineers (ACE)** at BIT Sindri is a premier student organization dedicated to fostering excellence in civil engineering education and innovation. Established in 2017, we bring together students, faculty, and industry professionals to create a vibrant learning community.[m
+[32m+[m
+[32m+[m[32m### 🌟 Our Mission[m
+[32m+[m[32m- **Foster Innovation**: Promote creative thinking and innovative solutions in civil engineering[m
+[32m+[m[32m- **Build Community**: Connect junior, senior, and alumni students on a unified platform[m
+[32m+[m[32m- **Enhance Skills**: Provide hands-on learning experiences through workshops and events[m
+[32m+[m[32m- **Industry Connect**: Bridge the gap between academia and industry[m
+[32m+[m
+[32m+[m[32m### 📊 Key Statistics[m
+[32m+[m[32m- **400+** General Members[m
+[32m+[m[32m- **60+** Core Members[m[41m  [m
+[32m+[m[32m- **50+** Events Organized[m
+[32m+[m[32m- **5+** Years of Excellence[m
+[32m+[m
+[32m+[m[32m## 🚀 Features[m
+[32m+[m
+[32m+[m[32m### ✨ Modern UI/UX[m
+[32m+[m[32m- **Responsive Design**: Optimized for all devices[m
+[32m+[m[32m- **Smooth Animations**: Powered by Framer Motion[m
+[32m+[m[32m- **Modern Typography**: Inter & Poppins fonts[m
+[32m+[m[32m- **Glass Morphism**: Beautiful visual effects[m
+[32m+[m
+[32m+[m[32m### 🎨 Design System[m
+[32m+[m[32m- **Tailwind CSS**: Utility-first CSS framework[m
+[32m+[m[32m- **Custom Color Palette**: Professional blue and gold theme[m
+[32m+[m[32m- **Component Library**: Reusable UI components[m
+[32m+[m[32m- **Dark Mode Ready**: Accessibility features[m
+[32m+[m
+[32m+[m[32m### 🔧 Technical Features[m
+[32m+[m[32m- **TypeScript Support**: Type-safe development[m
+[32m+[m[32m- **SEO Optimized**: React Helmet integration[m
+[32m+[m[32m- **Performance Optimized**: Code splitting and lazy loading[m
+[32m+[m[32m- **PWA Ready**: Progressive Web App features[m
+[32m+[m
+[32m+[m[32m## 🛠️ Tech Stack[m
+[32m+[m
+[32m+[m[32m### Frontend[m
+[32m+[m[32m- **React 17.0.2** - UI Library[m
+[32m+[m[32m- **TypeScript 4.9.4** - Type Safety[m
+[32m+[m[32m- **Tailwind CSS 3.4.3** - Styling[m
+[32m+[m[32m- **Framer Motion 12.23.12** - Animations[m
+[32m+[m[32m- **Lucide React** - Icons[m
+[32m+[m[32m- **React Router** - Navigation[m
+[32m+[m
+[32m+[m[32m### Backend & Services[m
+[32m+[m[32m- **Firebase** - Authentication & Database[m
+[32m+[m[32m- **Formspree** - Contact Forms[m
+[32m+[m[32m- **React Helmet Async** - SEO Management[m
+[32m+[m
+[32m+[m[32m### Development Tools[m
+[32m+[m[32m- **Create React App** - Build Tool[m
+[32m+[m[32m- **ESLint** - Code Quality[m
+[32m+[m[32m- **Prettier** - Code Formatting[m
+[32m+[m
+[32m+[m[32m## 📦 Installation & Setup[m
+[32m+[m
+[32m+[m[32m### Prerequisites[m
+[32m+[m[32m- Node.js (v16 or higher)[m
+[32m+[m[32m- npm or yarn package manager[m
+[32m+[m
+[32m+[m[32m### Quick Start[m
+[32m+[m
+[32m+[m[32m1. **Clone the repository**[m
+[32m+[m[32m   ```bash[m
+[32m+[m[32m   git clone https://github.com/your-username/ace-bits.git[m
+[32m+[m[32m   cd ace-bits[m
+[32m+[m[32m   ```[m
+[32m+[m
+[32m+[m[32m2. **Install dependencies**[m
+[32m+[m[32m   ```bash[m
+[32m+[m[32m   npm install[m
+[32m+[m[32m   ```[m
+[32m+[m
+[32m+[m[32m3. **Start development server**[m
+[32m+[m[32m   ```bash[m
+[32m+[m[32m   npm start[m
+[32m+[m[32m   ```[m
+[32m+[m
+[32m+[m[32m4. **Open your browser**[m
+[32m+[m[32m   Navigate to [http://localhost:3000](http://localhost:3000)[m
+[32m+[m
+[32m+[m[32m### Build for Production[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpm run build[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Available Scripts[m
+[32m+[m
+[32m+[m[32m| Script | Description |[m
+[32m+[m[32m|--------|-------------|[m
+[32m+[m[32m| `npm start` | Starts development server |[m
+[32m+[m[32m| `npm run build` | Creates production build |[m
+[32m+[m[32m| `npm test` | Runs test suite |[m
+[32m+[m[32m| `npm run eject` | Ejects from Create React App |[m
+[32m+[m
+[32m+[m[32m## 📁 Project Structure[m
+[32m+[m
+[32m+[m[32m```[m
+[32m+[m[32maceb-main/[m
+[32m+[m[32m├── public/                 # Static assets[m
+[32m+[m[32m├── src/[m
+[32m+[m[32m│   ├── components/         # Reusable components[m
+[32m+[m[32m│   │   ├── nav/           # Navigation components[m
+[32m+[m[32m│   │   ├── Footer/        # Footer component[m
+[32m+[m[32m│   │   └── homepageSections/ # Homepage sections[m
+[32m+[m[32m│   ├── views/             # Page components[m
+[32m+[m[32m│   ├── routes/            # Routing configuration[m
+[32m+[m[32m│   ├── api/               # API services[m
+[32m+[m[32m│   ├── assets/            # Images, videos, etc.[m
+[32m+[m[32m│   ├── reducers/          # Redux reducers[m
+[32m+[m[32m│   ├── App.js             # Main app component[m
+[32m+[m[32m│   ├── index.js           # Entry point[m
+
